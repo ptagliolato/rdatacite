@@ -43,7 +43,8 @@ dc_cn <- function(dois, format = "bibtex", style = "apa", locale = "en-US",
     "jats" = "application/vnd.jats+xml")
   type <- pick[[format]]
   con <- crul::HttpClient$new(
-    url = "https://data.crosscite.org",
+    #url = "https://data.crosscite.org",
+    url = get_dataciteCNBaseUrl(),#"https://data.crosscite.org",
     opts = c(list(followlocation = 1), ...),
     headers = list(
       Accept = type,
